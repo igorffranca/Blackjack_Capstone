@@ -1,5 +1,6 @@
 import random
 import os
+from art import logo
 
 def clear():
     if os.name == 'nt':
@@ -39,16 +40,6 @@ def verify_result(u_score, comp_score, com_cards, u_cards):
     
 def game():
     
-    logo = """
-.------.            _     _            _    _            _    
-|A_  _ |.          | |   | |          | |  (_)          | |   
-|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
-| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
-|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
-`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
-      |  \/ K|                            _/ |                
-      `------'                           |__/           
-""" 
     while True:
         clear()
         print(logo)
@@ -71,8 +62,8 @@ def game():
             user_current_score = calculate_score(user_cards)
             computer_score = calculate_score(computer_cards)
 
-            print(f"Your cards: {user_cards}, current score: {user_current_score}")
-            print(f"Computer's first card: {computer_first_card}")
+            print(f"\nYour cards: {user_cards}, current score: {user_current_score}")
+            print(f"Computer's first card: {computer_first_card}\n")
 
             if user_current_score == 0 or computer_score == 0 or computer_score > 21 or user_current_score > 21:
                 verify_result(user_current_score, computer_score, computer_cards, user_cards)
