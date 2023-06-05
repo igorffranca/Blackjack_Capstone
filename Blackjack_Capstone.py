@@ -1,6 +1,5 @@
 import random
 import os
-from art import logo
 
 def clear():
     if os.name == 'nt':
@@ -37,6 +36,17 @@ def verify_result(u_score, comp_score, com_cards, u_cards):
         print("You win 😁")
     else:
         print("You lose 😤") 
+
+logo = """
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
     
 def game():
     
