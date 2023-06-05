@@ -8,7 +8,7 @@ def clear():
        os.system('clear')
 
 def print_final_result(u_score, comp_score, com_cards, u_cards):
-    print(f"Your final hand: {u_cards}, final score: {u_score}")
+    print(f"\nYour final hand: {u_cards}, final score: {u_score}")
     print(f"Computer's final hand: {com_cards}, final score: {comp_score}")
 
 def calculate_score(cards):
@@ -73,13 +73,13 @@ def game():
             computer_score = calculate_score(computer_cards)
 
             print(f"\nYour cards: {user_cards}, current score: {user_current_score}")
-            print(f"Computer's first card: {computer_first_card}\n")
+            print(f"Computer's first card: {computer_first_card}")
 
             if user_current_score == 0 or computer_score == 0 or computer_score > 21 or user_current_score > 21:
                 verify_result(user_current_score, computer_score, computer_cards, user_cards)
                 continue_game = False
             else:
-                another_card = input("Type 'y' to get another card, type 'n' to pass: ").lower().strip()
+                another_card = input("\nType 'y' to get another card, type 'n' to pass: ").lower().strip()
                 if another_card == "y":
                     user_cards.append(random.choice(cards))
                     user_current_score = calculate_score(user_cards)
@@ -95,7 +95,7 @@ def game():
                 else:
                     print("Invalid option. Type 'y' or 'n'.")
 
-        another_game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+        another_game = input("\nDo you want to play a game of Blackjack? Type 'y' or 'n': ")
         if another_game == 'y':
             game()
         elif another_game == 'n':
